@@ -21,9 +21,11 @@ In reality Jest seems to be perfectly fine with such mutations, or at least the 
 
 ### Installation
 
-Install using npm, e.g.:
+Install using e.g. npm:
 
 `npm install --save-dev @sbnc/jest-skip`
+
+... or your choice of package manager.
 
 ### Configuration
 
