@@ -3,7 +3,7 @@ Add the ability to Jest to dynamically skip tests during the test execution.
 
 ## Explanation
 
-Sometimes we want to skip a test based on some condition. For example, we may want to skip a test if the environment is not set up properly or if some other tests has failed. This is not possible with Jest out of the box, but this utility adds this functionality.
+Sometimes we want to skip a test based on some condition. For example, we may want to skip a test if the environment is not set up properly or if some other tests have failed. This is not possible with Jest out of the box, but this utility adds this functionality.
 
 This small utility attempts to solve that problem in the following way:
 * it includes a custom test environment which marks tests as skipped when needed
