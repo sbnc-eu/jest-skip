@@ -1,0 +1,57 @@
+{
+  "name": "@sbnc/jest-skip",
+  "version": "29.0.0-beta",
+  "description": "Jest environment and test utilities to conditionally skip tests.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbnc-eu/jest-skip"
+  },
+  "keywords": [
+    "Jest",
+    "environment",
+    "skip",
+    "testing",
+    "tool"
+  ],
+  "author": {
+    "name" : "Bence Szalai",
+    "email" : "bence@sbnc.eu",
+    "url" : "https://sbnc.eu/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn tsc:build && yarn rename",
+    "build:clean": "yarn clean && yarn tsc:build && yarn rename",
+    "tsc:build": "tsc --build tsconfig.esm.json --verbose && tsc --build tsconfig.cjs.json --verbose",
+    "tsc:build:clean": "tsc --build tsconfig.esm.json --clean && tsc --build tsconfig.cjs.json --clean",
+    "rename": "yarn rename:esm && yarn rename:cjs",
+    "rename:esm": "mv dist/esm/utilities.js dist/esm/utilities.mjs",
+    "rename:cjs": "find ./dist/cjs -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.cjs\"' '{}' \\;",
+    "clean": "rm -rf gen/* && rm -rf dist/* && rm -f tsconfig.esm.tsbuildinfo && rm -f tsconfig.cjs.tsbuildinfo",
+    "lint": "eslint --ext .js,.vue,.ts,.json,.jsonc,.json5 ./",
+    "lint:fix": "eslint --ext .js,.vue,.ts ./ --fix"
+  },
+  "peerDependencies": {
+    "jest-environment-node": ">=24.8.0",
+    "jest-environment-jsdom": ">=24.8.0",
+    "jest-circus": ">=24.8.0"
+  },
+  "devDependencies": {
+    "jest-environment-node": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "jest-circus": "^29.0.0",
+    "typescript": "^5.1.6"
+  },
+  "exports": {
+    "./node": {
+      "require": "./dist/cjs/node-environment.cjs"
+    },
+    "./jsdom": {
+      "require": "./dist/cjs/jsdom-environment.cjs"
+    },
+    ".": {
+      "import": "./dist/esm/utilities.mjs",
+      "require": "./dist/cjs/utilities.cjs"
+    }
+  }
+}
