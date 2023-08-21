@@ -1,6 +1,6 @@
 {
   "name": "@sbnc/jest-skip",
-  "version": "29.0.0-beta",
+  "version": "29.0.0-rc.0",
   "description": "Jest environment and test utilities to conditionally skip tests.",
   "repository": {
     "type": "git",
@@ -24,9 +24,7 @@
     "build:clean": "yarn clean && yarn tsc:build && yarn rename",
     "tsc:build": "tsc --build tsconfig.esm.json --verbose && tsc --build tsconfig.cjs.json --verbose",
     "tsc:build:clean": "tsc --build tsconfig.esm.json --clean && tsc --build tsconfig.cjs.json --clean",
-    "rename": "yarn rename:esm && yarn rename:cjs",
-    "rename:esm": "mv dist/esm/utilities.js dist/esm/utilities.mjs",
-    "rename:cjs": "find ./dist/cjs -name '*.js' -exec sh -c 'mv \"$0\" \"${0%.js}.cjs\"' '{}' \\;",
+    "rename": "mv dist/esm/utilities.js dist/esm/utilities.mjs",
     "clean": "rm -rf gen/* && rm -rf dist/* && rm -f tsconfig.esm.tsbuildinfo && rm -f tsconfig.cjs.tsbuildinfo",
     "lint": "eslint --ext .js,.vue,.ts,.json,.jsonc,.json5 ./",
     "lint:fix": "eslint --ext .js,.vue,.ts ./ --fix"
@@ -44,14 +42,14 @@
   },
   "exports": {
     "./node": {
-      "require": "./dist/cjs/node-environment.cjs"
+      "require": "./dist/cjs/node-environment.js"
     },
     "./jsdom": {
-      "require": "./dist/cjs/jsdom-environment.cjs"
+      "require": "./dist/cjs/jsdom-environment.js"
     },
     ".": {
       "import": "./dist/esm/utilities.mjs",
-      "require": "./dist/cjs/utilities.cjs"
+      "require": "./dist/cjs/utilities.js"
     }
   }
 }
