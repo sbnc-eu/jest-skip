@@ -53,10 +53,11 @@ crashlytics-build.properties
 fabric.properties
 
 ### Additional items
-# Generated
-/dist/
+# Sources
+/src/
 
 # Other
 .wakatime-project
 package-lock.json
 *.tsbuildinfo
+tsconfig.*
