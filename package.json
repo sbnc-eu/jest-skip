@@ -1,6 +1,6 @@
 {
   "name": "@sbnc/jest-skip",
-  "version": "29.0.0-rc.0",
+  "version": "29.0.0-rc.1",
   "description": "Jest environment and test utilities to conditionally skip tests.",
   "repository": {
     "type": "git",
@@ -42,14 +42,17 @@
   },
   "exports": {
     "./node": {
-      "require": "./dist/cjs/node-environment.js"
+      "require": "./dist/cjs/node-environment.js",
+      "types": "./dist/cjs/node-environment.d.ts"
     },
     "./jsdom": {
-      "require": "./dist/cjs/jsdom-environment.js"
+      "require": "./dist/cjs/jsdom-environment.js",
+      "types": "./dist/cjs/jsdom-environment.d.ts"
     },
     ".": {
       "import": "./dist/esm/utilities.mjs",
-      "require": "./dist/cjs/utilities.js"
+      "require": "./dist/cjs/utilities.js",
+      "types": "./dist/esm/utilities.d.ts"
     }
   }
 }

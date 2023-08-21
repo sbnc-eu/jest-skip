@@ -50,8 +50,9 @@ Specify the environment as a CLI argument for the Jest command:
 `jest --env=@sbnc/jest-skip/node`
 
 
-#### In "package.json"
+#### In `package.json`
 
+Add the following to your `package.json` file to configure for all tests:
 
 ```json
 {

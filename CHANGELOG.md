@@ -6,9 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [29.0.0] - 2023-08-21
-### Added
+## [29.0.0-rc.1] - 2023-08-22
+### Fix
+- Typings were not exported properly so using `skip()` and `skipIf()` gave errors in TypeScript tests.
+
+### Docs
+- Improved `README.md` configuration section.
+
+
+## [29.0.0-rc.0] - 2023-08-21
+### Initial
 - Initial release (Version numbering started at 29 to keep in sync with Jest main.)
 
-[Unreleased]: https://github.com/BenceSzalai/vue-components-ide-helper/compare/29.0.0...HEAD
-[29.0.0]: https://github.com/BenceSzalai/vue-components-ide-helper/releases/tag/29.0.0
+
+
+[Unreleased]: https://github.com/BenceSzalai/vue-components-ide-helper/compare/29.0.0-rc.1...HEAD
+[29.0.0-rc.1]: https://github.com/BenceSzalai/vue-components-ide-helper/compare/29.0.0-rc.0...29.0.0-rc.1
+[29.0.0-rc.0]: https://github.com/BenceSzalai/vue-components-ide-helper/releases/tag/29.0.0-rc.0
