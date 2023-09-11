@@ -1,6 +1,6 @@
 {
   "name": "@sbnc/jest-skip",
-  "version": "29.0.0-rc.1",
+  "version": "29.0.0",
   "description": "Jest environment and test utilities to conditionally skip tests.",
   "license": "MIT",
   "keywords": [
