@@ -74,7 +74,7 @@ module.exports = {
 Or if you are using `json`:
 ```json
 {
-  "testEnvironment": "@happy-dom/jest-environment"
+  "testEnvironment": "@sbnc/jest-skip/node"
 }
 ```
 
